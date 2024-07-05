@@ -20,7 +20,7 @@ A simple color picker application built using Python and Tkinter. This applicati
 
 1. Clone the repository or download the script file.
    ```sh
-   git clone https://github.com/yourusername/ab-color-picker.git
+   git clone https://github.com/abnahid/ab-color-picker.git
    cd ab-color-picker
    ```
 
