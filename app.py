@@ -6,6 +6,8 @@ co0 = "#444466"  # black
 co1 = "#feffff"  # white
 co2 = "#004338"
 
+
+# Function to update the color preview and hexadecimal code
 def scale(value):
     r = red_scale.get()
     g = green_scale.get()
@@ -19,6 +21,7 @@ def scale(value):
     color_entry.delete(0, END)
     color_entry.insert(0, hexadecimal)
 
+# Function to copy the hexadecimal code to clipboard
 def onclick():
     tkinter.messagebox.showinfo('Color', "Copied Successfully!")
     clip = Tk()
@@ -27,35 +30,44 @@ def onclick():
     clip.clipboard_append(color_entry.get())
     clip.destroy()
 
+
+# Initialize main window
 window = Tk()
 window.geometry("530x205")
 window.configure(bg=co1)
 window.resizable(width=FALSE, height=FALSE)
 
+# Color preview screen
 screen = Label(window, bg=co0, width=40, height=10)
 screen.grid(row=0, column=0)
 
+# Frame for RGB sliders
 right_frame = Frame(window, bg=co1)
 right_frame.grid(row=0, column=1, padx=5)
 
+# Frame for additional controls
 down_frame = Frame(window, bg=co1)
 down_frame.grid(row=1, column=0, columnspan=2, padx=15)
 
+# Red slider and label
 rad = Label(right_frame, text="Rad", bg=co1, fg='red', width=7, anchor=NW, font=("Ivy", 12, "bold"))
 rad.grid(row=0, column=0)
 red_scale = Scale(right_frame, bg=co1, fg="red", from_=0, to=255, length=150, orient=HORIZONTAL, command=scale)
 red_scale.grid(row=0, column=1)
 
+# Green slider and label
 green = Label(right_frame, text="Green", bg=co1, fg='green', width=7, anchor=NW, font=("Ivy", 12, "bold"))
 green.grid(row=1, column=0)
 green_scale = Scale(right_frame, bg=co1, fg="green", from_=0, to=255, length=150, orient=HORIZONTAL, command=scale)
 green_scale.grid(row=1, column=1)
 
+# Blue slider and label
 blue = Label(right_frame, text="Blue", bg=co1, fg='blue', width=7, anchor=NW, font=("Ivy", 12, "bold"))
 blue.grid(row=2, column=0)
 blue_scale = Scale(right_frame, bg=co1, fg="blue", from_=0, to=255, length=150, orient=HORIZONTAL, command=scale)
 blue_scale.grid(row=2, column=1)
 
+# Hexadecimal code display and copy button
 rgb_label = Label(down_frame, text="HEX CODE", bg=co1, anchor=NW, font=("Ivy", 10, "bold"))
 rgb_label.grid(row=0, column=0, pady=5)
 
