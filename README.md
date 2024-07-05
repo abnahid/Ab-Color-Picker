@@ -46,6 +46,4 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 - Developed by Abdul Jabbar Al Nahid
 - Visit [abnahid.com](http://abnahid.com) for more projects
 
----
 
-Feel free to customize it further to fit your needs.
